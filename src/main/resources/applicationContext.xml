@@ -7,8 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="lightCar" class="com.jezh.entityImpl.LightCar"/>
-    <bean name="heavyTruck" class="com.jezh.entityImpl.HeavyTruck"/>
+    <context:property-placeholder location="vehicles.properties,
+                                    routs.properties,
+                                    races.properties"
+                                  ignore-unresolvable="true"/>
+    <bean id="lightCar" class="${lightCar.class}"/>
+    <bean name="heavyTruck" class="${heavyTruck.class}"/>
     <bean id="short" class="com.jezh.baseImpl.TrackImpl">
         <constructor-arg value="17"/>
     </bean>
