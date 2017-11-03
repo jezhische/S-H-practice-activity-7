@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="lightCar" class="com.jezh.entityImpl.LightCar"/>
+    <bean name="heavyTruck" class="com.jezh.entityImpl.HeavyTruck"/>
+    <bean id="short" class="com.jezh.baseImpl.TrackImpl">
+        <constructor-arg value="17"/>
+    </bean>
+    <bean id="long" class="com.jezh.baseImpl.TrackImpl">
+        <constructor-arg value="133"/>
+    </bean>
+    <bean id="race1" class="com.jezh.raceImpl.RaceImpl">
+        <constructor-arg index="0" ref="short"/>
+        <constructor-arg ref="lightCar"/>
+    </bean>
+</beans>

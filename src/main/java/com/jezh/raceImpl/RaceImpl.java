@@ -24,4 +24,5 @@ public class RaceImpl implements Race {
         return String.format(">> Race: track length: %dkm,  \tvehicle type: %s,  \tbrand: %s, \tspent fuel: %.2fl",
                 track.getDistance(), ((VehicleImpl)vehicle).getType(), vehicle.getName(), getSpentFuel());
     }
+
 }
