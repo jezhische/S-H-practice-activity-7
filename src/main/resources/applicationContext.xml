@@ -7,32 +7,26 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="com.jezh"/>
     <context:property-placeholder location="vehicles.properties,
                                     routs.properties,
                                     races.properties"
                                   ignore-unresolvable="true"/>
-    <bean id="lightCar" class="${lightCar.class}"/>
-    <bean name="heavyTruck" class="${heavyTruck.class}"/>
-    <bean id="short" class="com.jezh.baseImpl.TrackImpl">
-        <constructor-arg value="17"/>
-    </bean>
-    <bean id="long" class="com.jezh.baseImpl.TrackImpl">
-        <constructor-arg value="133"/>
-    </bean>
+
     <bean id="race1" class="com.jezh.raceImpl.RaceImpl">
-        <constructor-arg index="0" ref="short"/>
+        <constructor-arg index="0" ref="shorter"/>
         <constructor-arg ref="lightCar"/>
     </bean>
     <bean id="race2" class="com.jezh.raceImpl.RaceImpl">
-        <constructor-arg ref="short"/>
+        <constructor-arg ref="shorter"/>
         <constructor-arg ref="heavyTruck"/>
     </bean>
     <bean id="race3" class="com.jezh.raceImpl.RaceImpl">
-        <constructor-arg ref="long"/>
+        <constructor-arg ref="longer"/>
         <constructor-arg ref="lightCar"/>
     </bean>
     <bean id="race4" class="com.jezh.raceImpl.RaceImpl">
-        <constructor-arg ref="long"/>
+        <constructor-arg ref="longer"/>
         <constructor-arg ref="heavyTruck"/>
     </bean>
 </beans>
