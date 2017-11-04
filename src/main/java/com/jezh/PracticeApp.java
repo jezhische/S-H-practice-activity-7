@@ -1,17 +1,11 @@
 package com.jezh;
 
-import com.jezh.base.Track;
-import com.jezh.baseImpl.TrackImpl;
-import com.jezh.entity.Vehicle;
-import com.jezh.entityImpl.HeavyTruck;
-import com.jezh.entityImpl.LightCar;
-import com.jezh.race.Race;
-import com.jezh.raceImpl.RaceImpl;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.jezh.config.AppConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class PracticeApp {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         System.out.println(context.getBean("race1"));
         System.out.println(context.getBean("race2"));
         System.out.println(context.getBean("race3"));
