@@ -23,4 +23,16 @@
         <constructor-arg index="0" ref="short"/>
         <constructor-arg ref="lightCar"/>
     </bean>
+    <bean id="race2" class="com.jezh.raceImpl.RaceImpl">
+        <constructor-arg ref="short"/>
+        <constructor-arg ref="heavyTruck"/>
+    </bean>
+    <bean id="race3" class="com.jezh.raceImpl.RaceImpl">
+        <constructor-arg ref="long"/>
+        <constructor-arg ref="lightCar"/>
+    </bean>
+    <bean id="race4" class="com.jezh.raceImpl.RaceImpl">
+        <constructor-arg ref="long"/>
+        <constructor-arg ref="heavyTruck"/>
+    </bean>
 </beans>
