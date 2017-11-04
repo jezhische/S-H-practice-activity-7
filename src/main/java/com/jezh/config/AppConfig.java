@@ -22,11 +22,11 @@ public class AppConfig {
     @Value("${longy}") private String longy;
 
     @Bean
-    public Track shorter() {
+    private Track shorter() {
         return new TrackImpl(Integer.valueOf(shorty));
     }
     @Bean
-    public Track longer() {
+    private Track longer() {
         return new TrackImpl(Integer.valueOf(longy));
     }
     @Bean
